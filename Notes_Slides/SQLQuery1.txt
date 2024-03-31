@@ -1,0 +1,57 @@
+﻿WITH SalaryCTE(deptid, noofsalary) 
+AS 
+(
+ SELECT deptid, COUNT(salary) 
+FROM tbl_employee 
+GROUP BY deptid 
+) 
+SELECT * 
+FROM SalaryCTE 
+
+go
+
+WITH SalaryCTE(deptid, noofsalary) 
+AS 
+(
+ SELECT deptid, COUNT(salary) 
+FROM tbl_employee 
+GROUP BY deptid 
+) 
+SELECT * 
+FROM SalaryCTE 
+WHERE noofsalary>1
+
+
+WITH SalaryCTE(deptid, noofsalary) 
+AS 
+(
+ SELECT deptid, COUNT(salary) 
+FROM tbl_employee 
+GROUP BY deptid 
+) 
+SELECT AVG(noofsalary)
+FROM SalaryCTE 
+WHERE noofsalary>1
+
+
+SELECT * 
+FROM tbl_employee 
+PIVOT(SUM(salary) FOR deptid IN ([201],[202],[203])) AS a
+
+
+SELECT ROW_NUMBER() OVER (ORDER BY salary) AS [Row Number by Salary], ename, salary
+FROM tbl_employee
+
+SELECT ROW_NUMBER() OVER (PARTITION BY deptid ORDER BY salary) AS [Partition by deptid], ename, salary, deptid 
+FROM tbl_employee
+
+SELECT RANK() OVER (ORDER BY salary) AS [Rank by salary], ename, salary 
+FROM tbl_employee
+
+SELECT 
+    deptid,   
+    SUM(salary) AS total_salary
+FROM 
+    tbl_employee
+GROUP BY 
+    CUBE (deptid);

@@ -1,0 +1,11 @@
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\bin\Debug\net6.0\EmployeeLib.deps.json
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\bin\Debug\net6.0\EmployeeLib.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\bin\Debug\net6.0\EmployeeLib.pdb
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.AssemblyInfoInputs.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.AssemblyInfo.cs
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.csproj.CoreCompileInputs.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\refint\EmployeeLib.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\EmployeeLib.pdb
+D:\Cashpor_Demos\HelloWorldWebApp\EmployeeLib\obj\Debug\net6.0\ref\EmployeeLib.dll

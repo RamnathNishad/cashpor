@@ -1,0 +1,235 @@
+Day 1 : Angular
+Day 2 : .NET Core Web API with EF Core
+Day 3 : MS SQL Server and Mongodb
+
+================================
+Angular
+Setup:
+1)NodeJS:- runtime for javascript code execution
+www.nodejs.org
+-to verify: node --version
+2) NPM:- Node Package Manager:- for installing packages
+	to verify : npm --version
+3) install angular cli:  npm i @angular/cli
+4) Editor : VS Code or any other 
+
+SPA: Single-Page-Application
+-open-source
+-Google product
+-Developed in Typscript(superset of javascript): gets transpiled into JavaScript
+
+Pre-requisite: HTML+JS+CSS basics
+
+Basic building block of angular app is a Component:
+Component=Typescript class+HTML+CSS
+
+@Component()
+class Demo{
+
+}
+Basic commands:
+-ng new first-app
+-ng serve   : to start development server
+
+files :
+-index.html :- the only html file for first page
+-main.ts:- bootstrapping details
+-package.json:- all the packages dependencies
+-angular.json:- settings and configuration(must restart server if modified)
+
+--install bootstrap and configure
+ npm i bootstrap
+--to configure we need to specify in angular.json
+
+-Login 
+-Registration
+
+
+-----------Routing in Angular----------------
+for navigation purpose we use routing to achieve SPA
+steps:
+-define all the routes to be used in across application
+	path:"home",
+	component:HomeComponent
+It is specified in a file app.routes.ts
+-inside the app.config.ts, import the routes and provideRouter(routes) to be done in main.ts file
+-specify the url routes inside the application like hyperlink or button and so.
+	use 
+	<p [routerLink]="['/home']">Home</p>
+
+-wherever components needs to be loaded, we have to specify a placeholder:
+		<router-outlet></router-outlet>
+
+
+
+
+
+
+Angular directives:-
+These are used to change behavior of an html element ie. component element.
+Two types of directives:
+1) attribute directives:-only changes behaviors like styles color, size, visibility but do not change content 
+	for e.g. ngStyle, ngClass, ngHidden
+2) structural directives:-These will change the content of the element. to use these, we have to asterik(*)
+	ngIf,ngFor,ngSwitchCase
+
+Angular databindings:-
+1) one-way : component to view: property binding {{}}
+2) one-way : view to component: to be explored
+3) two-way : component to view and view to component
+
+	it is done using:
+<form [ngForm]="f1" (ngSubmit)="saveData()">
+<input type="text" [(ngModel)]="uname" id="uname" name="uname" />
+<button>Save</button>
+</form>
+
+
+import the FormsModule to use [ngModel]
+
+
+
+
+<button (click)="save()">Save</button>
+
+
+Two types of forms:
+1) template-driven form: validations are controlled by the html itself
+2) reactive forms:- validation logic is done inside the class of the component. FormGroup object is mapped to the html form.
+This formgroup object is binded with the form.
+Each input element is represented using formControlName attribute. e.g
+	<form [ngForm]="fg" (ngSumbit)="save()">
+	<input type="text" formControlName="uname"
+	</form>
+Inside the ts file:
+	fg:FormGroup;
+
+	ctor(){
+	this.fg=new FormGroup(
+		{
+			id:new FormControl(""),
+			uname:new FormControl("")
+		}
+	);
+	}
+
+
+
+
+
+
+-------------Angular Pipes===================
+These are used to transform data.
+in-built:
+	lowercase,uppercase,date,currency,json
+	
+	{{uname | uppercase}}
+
+
+----------------Angular Service----------------
+connect with Web API 
+
+What is angular service:
+It is a sharable data across components or anywhere in the application. Data can be a simple variable or a full object with methods.
+These are used with dependency injection in constructor
+	constructor(private service:UserService){
+
+	}
+
+To call API in client front-end, web api should be enabled for CORS policy. Cross-Origin-Resource-Sharing
+
+
+==============================================================
+
+ASP.NET WEB API:-
+1) A Web service over HTTP protocol
+2) It can fetch response to different types of client in different format response like json, xml, bson and any other custom format.
+3) Content negotiation :- default response format given by the api if not provided
+4) With ASP.NET Web API we also get features like MVC pattern, Routing, Authentication, Dependency injections are few listed ones and many more.
+5) WEB API will not have any view like html , it only gives data.
+
+WEB API=MVC - V
+6) WEB API works closely with http request headers like
+i)HTTPGET-----> sends GET request --to access resource from server
+ii)HTTPPOST---> sends POST request --to create resource
+iii)HTTPPUT----> send PUT request--to update resource
+iv)HTTPDELETE--> sends DELETE request---to delete resource
+
+Routing in ASP.NET Core Web API:-
+Two types of routing:
+1) Conventional routing specified using inside the Program.cs
+
+endpoints.MapControllerRoute(
+        name: "users",
+        pattern: "api/{controller}/getusers",
+        defaults: new { controller = "Users" }
+    );
+2) Attribute based routing used now a days and it is specified on the controller and action methods using attribute [Route()]
+
+===============Entityframework Core==================
+-It is open source ORM(Object-Relational Mapping) tool
+-It decreases the distance between database and application such that developers feel they r directly working into database.
+-It is the DataAccess Layer of an application as a repository layer it is used.
+
+Two approaches:
+1) Database-First approach:- When database is already designed 
+2) Code-First approach:- No database will be there and develepors are free to develop their application without any database tension or dependency. Database will get created when it is executed. We use migrations here to create or update changes in database from application models.
+
+We need packages are needed to be installed:
+1) Microsoft.EntityFrameWorkCore
+2) Microsoft.EntityFrameworkCore.SqlServer(only for MS SqlServer)
+		System.Data.Entity
+Database---->DbContext(connectionstring)--->DbSet(table)
+		(CRUD)
+
+Web api--->DAL(EF Core) with Repository pattern---->Database
+
+
+
+App--->Repository(interface)--->DAL---->SqlServer
+		     		(DAL)-->Oracle
+
+
+
+Steps for DB-First Approach:
+1) create tables in database
+2) Run the command from package console window in visual studio:
+	install 
+	Microsoft.EntityFrameworkCore.SqlServer
+	Microsoft.EntityFrameworkCore.Tools---for scaffolds command
+3) Scaffold-DbContext "constr" -OutputDir Models -Table "tbl_users"
+
+This will generate Model classes for the tables and 
+DbContext class to connect to database
+
+4) Configure the dependency injection for DbContext and DataAccess classes
+for DbContext:
+	builder.Services.AddDbContext<UserDbContext>();
+
+for DataAccess class:
+builder.Services.AddScoped<IUserDataAccess,UserDataAccess>();
+
+
+================
+Data Source=RAMASUS;Initial Catalog=UsersDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False
+================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

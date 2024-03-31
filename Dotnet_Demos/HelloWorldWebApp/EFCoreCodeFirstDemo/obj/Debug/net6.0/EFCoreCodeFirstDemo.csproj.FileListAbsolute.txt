@@ -1,0 +1,14 @@
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\bin\Debug\net6.0\EFCoreCodeFirstDemo.deps.json
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\bin\Debug\net6.0\EFCoreCodeFirstDemo.runtimeconfig.json
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\bin\Debug\net6.0\EFCoreCodeFirstDemo.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\bin\Debug\net6.0\EFCoreCodeFirstDemo.pdb
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.csproj.AssemblyReference.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.AssemblyInfoInputs.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.AssemblyInfo.cs
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.csproj.CoreCompileInputs.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\refint\EFCoreCodeFirstDemo.dll
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.pdb
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\EFCoreCodeFirstDemo.genruntimeconfig.cache
+D:\Cashpor_Demos\HelloWorldWebApp\EFCoreCodeFirstDemo\obj\Debug\net6.0\ref\EFCoreCodeFirstDemo.dll
